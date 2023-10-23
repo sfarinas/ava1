@@ -10,12 +10,12 @@ struct List {
     struct Node* head;
     struct Node* tail;
 };
-
+// Função para criar uma lista vazia
 void create(struct List* list) {
     list->head = NULL;
     list->tail = NULL;
 }
-
+// Função para exibir os elementos da lista
 void display(struct List* list) {
     struct Node* current = list->head;
     printf("Lista: ");
@@ -25,7 +25,7 @@ void display(struct List* list) {
     }
     printf("NULL\n");
 }
-
+// Função para inserir um elemento na lista em ordem crescente
 void insert(struct List* list, int value) {
     struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
     new_node->data = value;
@@ -47,7 +47,7 @@ void insert(struct List* list, int value) {
         list->head = new_node;
     }
 }
-
+// Função para remover um elemento da lista
 void remove_element(struct List* list, int value) {
     struct Node* current = list->head;
     struct Node* previous = NULL;
@@ -69,7 +69,7 @@ void remove_element(struct List* list, int value) {
         printf("Lista Vazia\n");
     }
 }
-
+// Função para modificar um elemento da lista
 void modify(struct List* list, int oldValue, int newValue) {
     struct Node* current = list->head;
     struct Node* previous = NULL;
@@ -90,11 +90,11 @@ void modify(struct List* list, int oldValue, int newValue) {
         printf("Lista Vazia\n");
     }
 }
-
+// Função para verificar se a lista esta vazia
 int is_empty(struct List* list) {
     return list->head == NULL;
 }
-
+// Função para redefinir a lista, liberando a memória alocada para os elementos
 void reset(struct List* list) {
     struct Node* temp = list->head;
     if (temp != NULL) {
@@ -108,7 +108,7 @@ void reset(struct List* list) {
         printf("Lista Vazia\n");
     }
 }
-
+// Função principal
 int main() {
     struct List created_list;
     int value1, option, value2;
